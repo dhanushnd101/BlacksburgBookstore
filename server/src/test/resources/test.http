@@ -76,9 +76,8 @@ Content-Type: application/json
       {
         "book": {
           "bookId": 1002,
-          "title": "Beach Read 2",
+          "title": "Beach Read",
           "author": "Emily Henry",
-          "description": "",
           "price": 599,
           "rating": 3,
           "isPublic": true,
@@ -90,13 +89,11 @@ Content-Type: application/json
     ]
   },
   "customerForm": {
-    "name": "Dhww",
-    "address": "120d",
-    "phone": "5408248763",
-    "email": "abc@gmail.com",
-    "ccNumber": "4444-3333-2222-1111",
-    "ccExpiryMonth": 12,
-    "ccExpiryYear": 2023
+    "name": "Monica",
+    "address": "123 Main St",
+    "phone": "408 555 1212",
+    "ccExpiryMonth": 7,
+    "ccExpiryYear": 2026
   }
 }
 

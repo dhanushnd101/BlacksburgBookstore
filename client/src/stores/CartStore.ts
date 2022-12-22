@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 import { ShoppingCart } from "@/models/ShoppingCart";
 import { BookItem, CustomerForm, OrderDetails } from "@/types";
 import { apiUrl } from "@/services/ApiService";
+import { useOrderDetailsStore } from "@/stores/OrderDetailsStore";
 
 export const CART_STORAGE_KEY = "ShoppingCart";
 
@@ -10,7 +11,6 @@ export const useCartStore = defineStore("CartStore", {
     const initCart = new ShoppingCart();
     const cartString = localStorage.getItem(CART_STORAGE_KEY);
     if (cartString !== null) {
-      // cartString is a string
       const cartFromStorage = JSON.parse(cartString) as ShoppingCart;
       Object.assign(initCart, cartFromStorage);
     }
@@ -48,6 +48,10 @@ export const useCartStore = defineStore("CartStore", {
       localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(this.cart));
     },
     async placeOrder(customerForm: CustomerForm) {
+      // clear any existing order
+      const orderDetailsStore = useOrderDetailsStore();
+      orderDetailsStore.clearOrderDetails();
+
       const order = { cart: this.cart, customerForm: customerForm };
       console.log(JSON.stringify(order));
 
@@ -63,8 +67,13 @@ export const useCartStore = defineStore("CartStore", {
         referrer: "client",
         method: "POST", // or 'PUT'
         body: JSON.stringify(order),
-      }).then((response) => response.json());
-      this.clearCart();
+      }).then((response) => {
+        if (response.ok) {
+          this.clearCart();
+        }
+        return response.json();
+      });
+      orderDetailsStore.setOrderDetails(orderDetails);
     },
   },
 });

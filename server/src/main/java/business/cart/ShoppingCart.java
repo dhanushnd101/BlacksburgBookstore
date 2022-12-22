@@ -6,13 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
-/**
- * A shopping cart arrives in an order form from the client.
- * This class holds the de-serialized JSON data.
- *
- * (We ignore any extra elements that the client sends
- *  that this class does not require.).
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ShoppingCart {
 
@@ -36,13 +29,6 @@ public class ShoppingCart {
 		this.items = items;
 	}
 
-	/**
-	 * Returns the sum of the item price multiplied by the quantity for all
-	 * items in shopping cart list. This is the total cost *in cents*,
-	 * not including the surcharge.
-	 *
-	 * @return total of items in cart, excluding surcharge
-	 */
 	@JsonIgnore
 	public int getComputedSubtotal() {
 		return items.stream()

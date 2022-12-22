@@ -119,6 +119,7 @@ async function submitOrder() {
       })
       .then(() => {
         form.checkoutStatus = "OK";
+        cartStore.clearCart();
         router.push({ name: "confirmation-view" });
       })
       .catch((reason) => {
@@ -127,8 +128,6 @@ async function submitOrder() {
       });
   }
 }
-
-/* NOTE: For example yearFrom(0) == <current_year> */
 function yearFrom(index: number) {
   return new Date().getFullYear() + index;
 }
@@ -145,7 +144,6 @@ function yearFrom(index: number) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /*justify-content: center;*/
   padding: 1em;
   color: #0f4069;
   width: 500px;

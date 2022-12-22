@@ -5,23 +5,32 @@ import business.book.BookDao;
 import business.book.BookDaoJdbc;
 import business.category.CategoryDao;
 import business.category.CategoryDaoJdbc;
-import business.order.DefaultOrderService;
-import business.order.OrderService;
+import business.customer.CustomerDaoJdbc;
+import business.order.*;
+import business.customer.CustomerDao;
 
 public class ApplicationContext {
 
     private CategoryDao categoryDao;
     private BookDao bookDao;
-
     private OrderService orderService;
 
+    private OrderDao orderDao;
+    private LineItemDao lineItemDao;
+    private CustomerDao customerDao;
     public static ApplicationContext INSTANCE = new ApplicationContext();
 
     private ApplicationContext() {
         categoryDao = new CategoryDaoJdbc();
         bookDao = new BookDaoJdbc();
+        customerDao = new CustomerDaoJdbc();
         orderService = new DefaultOrderService();
+        orderDao = new OrderDaoJdbc();
+        lineItemDao = new LineItemDaoJdbc();
         ((DefaultOrderService)orderService).setBookDao(bookDao);
+        ((DefaultOrderService)orderService).setOrderDao(orderDao);
+        ((DefaultOrderService)orderService).setCustomerDao(customerDao);
+        ((DefaultOrderService)orderService).setLineItemDao(lineItemDao);
     }
 
     public CategoryDao getCategoryDao() {
@@ -33,4 +42,8 @@ public class ApplicationContext {
     public OrderService getOrderService(){
         return  this.orderService;
     }
+
+    public OrderDao getOrderDao(){return this.orderDao;}
+    public LineItemDao getLineItemDao(){return this.lineItemDao;}
+    public CustomerDao getCustomerDao(){return this.customerDao;}
 }

@@ -9,7 +9,6 @@ const categoryStore = useCategoryStore();
 }
 
 .categories-button {
-  /* background-color: var(--primary-color-dark); */
   margin-top: 0.25em;
 }
 

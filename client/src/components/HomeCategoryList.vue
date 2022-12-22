@@ -27,7 +27,7 @@ li {
 
 li div {
   padding: 0.5em 0;
-  background: rgba(0, 0, 0, 0.5); /* last # is percent opacity */
+  background: rgba(0, 0, 0, 0.5);
   color: white;
   transform: translateY(-2.25em);
   margin-bottom: -2em;
@@ -71,7 +71,7 @@ li div {
 
 .category-image-items div {
   padding: 0.5em 0;
-  background: rgba(0, 0, 0, 0.5); /* last # is percent opacity */
+  background: rgba(0, 0, 0, 0.5);
   color: white;
   transform: translateY(-2.25em);
   margin-bottom: -2em;

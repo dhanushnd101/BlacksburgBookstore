@@ -7,19 +7,23 @@ import HomeCategoryList from "@/components/HomeCategoryList.vue";
   display: flex;
   flex-direction: column;
 }
+
 .welcome-text {
   font-size: 45px;
   margin-top: 20px;
 }
+
 .welcome-text-body {
   font-size: 23px;
   max-width: 750px;
 }
+
 .shop-me-flex {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
 .shop-me-button {
   background: #2295f4;
   box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.25);
@@ -35,6 +39,7 @@ import HomeCategoryList from "@/components/HomeCategoryList.vue";
   transition-duration: 500ms;
   transform: scale(1);
 }
+
 .shop-me-button:hover {
   text-align: center;
 

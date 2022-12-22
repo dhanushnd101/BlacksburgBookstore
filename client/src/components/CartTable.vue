@@ -12,9 +12,6 @@ const bookImageFileName = function (book: BookItem): string {
   name = name.replace(/'/g, "");
   return `${name}.gif`;
 };
-const updateCart = function (book: BookItem, quantity: number) {
-  cartStore.cart.update(book, quantity);
-};
 </script>
 
 <style scoped>
@@ -359,9 +356,9 @@ h2 {
           </thead>
           <tbody>
             <tr class="line-box">
-              <td class="tg-73oq">Tax</td>
+              <td class="tg-73oq">Shipping</td>
               <td class="tg-wp8o">
-                {{ (cartStore.surcharge / 100).toFixed(2) }}%
+                {{ asDollarsAndCents(cartStore.surcharge) }}
               </td>
             </tr>
             <tr>

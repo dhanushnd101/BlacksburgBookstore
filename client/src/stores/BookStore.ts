@@ -10,12 +10,16 @@ export const useBookStore = defineStore("BookStore", {
   actions: {
     async fetchBooks(categoryName: string) {
       const categoryStore = useCategoryStore();
-      const selectedCategory =
-        categoryStore.categoryList?.find(
-          (category) => category.name === categoryName
-        ) || categoryStore.categoryList[0];
+      let selectedCategoryName = categoryName;
+      const selectedCategory = categoryStore.categoryList?.find(
+        (category) => category.name === categoryName
+      );
+      if (selectedCategory) {
+        selectedCategoryName = selectedCategory.name;
+      }
+
       const url =
-        apiUrl + "categories/name/" + selectedCategory.name + "/books/";
+        apiUrl + "categories/name/" + selectedCategoryName + "/books/";
       this.bookList = await fetch(url).then((response) => response.json());
     },
   },

@@ -121,9 +121,6 @@ form {
       </router-link>
     </section>
     <router-link to="/" class="primary-buttons"> Home </router-link>
-    <!--    <router-link to="/category/Best%20Selling" class="primary-buttons">-->
-    <!--      New Arrivals-->
-    <!--    </router-link>-->
     <router-link to="/category/Best%20Selling" class="primary-buttons">
       Best Sellers
     </router-link>

@@ -15,13 +15,6 @@ const bookImageFileName = function (book: BookItem): string {
 };
 </script>
 <style scoped>
-#book-boxes {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 1em;
-  gap: 1em;
-}
-
 .book-box {
   display: flex;
   flex-direction: column;
