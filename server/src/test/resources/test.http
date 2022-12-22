@@ -1,0 +1,104 @@
+# For a quick start check out our HTTP Requests collection (Tools|HTTP Client|Open HTTP Requests Collection) or
+# paste cURL into the file and request will be converted to HTTP Request format.
+#
+# Following HTTP Request Live Templates are available:
+# * 'gtrp' and 'gtr' create a GET request with or without query parameters;
+# * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
+# * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
+
+GET http://localhost:8080/DhanushBookstoreOrder/api/categories
+Accept: application/json
+
+###
+# curl 'http://localhost:8080/DhanushBookstoreOrder/api/orders'
+#  -H 'Accept: */*'
+#  -H 'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8'
+#  -H 'Cache-Control: max-age=0'
+#  -H 'Connection: keep-alive'
+#  -H 'Content-Type: application/json'
+#  -H 'Origin: http://localhost:8081'
+#  -H 'Referer: http://localhost:8081/'
+#  -H 'Sec-Fetch-Dest: empty'
+#  -H 'Sec-Fetch-Mode: cors'
+#  -H 'Sec-Fetch-Site: same-site'
+#  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36'
+#  -H 'sec-ch-ua: "Google Chrome";v="107", "Chromium";v="107", "Not=A?Brand";v="24"'
+#  -H 'sec-ch-ua-mobile: ?0'
+#  -H 'sec-ch-ua-platform: "macOS"'
+#  --data-raw '{"cart":{"itemArray":[{"book":{"bookId":1002,"title":"Beach Read","author":"Emily Henry","description":"","price":599,"rating":3,"isPublic":true,"isFeatured":false,"categoryId":1001},"quantity":1}]},"customerForm":{"name":"Dhanush Dinesh","address":"1203 University Terrace","phone":"5408248763","email":"dhanushnd@vt.edu","ccNumber":"4444333322221111","ccExpiryMonth":11,"ccExpiryYear":2022}}'
+#  --compressed ;
+#curl 'http://localhost:8080/DhanushBookstoreOrder/api/orders'
+#  -X 'OPTIONS'
+#  -H 'Accept: */*'
+#  -H 'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8'
+#  -H 'Access-Control-Request-Headers: content-type'
+#  -H 'Access-Control-Request-Method: POST'
+#  -H 'Cache-Control: max-age=0'
+#  -H 'Connection: keep-alive'
+#  -H 'Origin: http://localhost:8081'
+#  -H 'Referer: http://localhost:8081/'
+#  -H 'Sec-Fetch-Dest: empty'
+#  -H 'Sec-Fetch-Mode: cors'
+#  -H 'Sec-Fetch-Site: same-site'
+#  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36'
+#  --compressed
+POST http://localhost:8080/DhanushBookstoreOrder/api/orders
+Accept: */*
+Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Origin: http://localhost:8081
+Referer: http://localhost:8081/
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-site
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36
+sec-ch-ua: "Google Chrome";v="107", "Chromium";v="107", "Not=A?Brand";v="24"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "macOS"
+Accept: */*
+Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+Access-Control-Request-Headers: content-type
+Access-Control-Request-Method: POST
+Cache-Control: max-age=0
+Connection: keep-alive
+Origin: http://localhost:8081
+Referer: http://localhost:8081/
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-site
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36
+Content-Type: application/json
+
+{
+  "cart": {
+    "itemArray": [
+      {
+        "book": {
+          "bookId": 1002,
+          "title": "Beach Read 2",
+          "author": "Emily Henry",
+          "description": "",
+          "price": 599,
+          "rating": 3,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1001
+        },
+        "quantity": 1
+      }
+    ]
+  },
+  "customerForm": {
+    "name": "Dhww",
+    "address": "120d",
+    "phone": "5408248763",
+    "email": "abc@gmail.com",
+    "ccNumber": "4444-3333-2222-1111",
+    "ccExpiryMonth": 12,
+    "ccExpiryYear": 2023
+  }
+}
+
+###
+
