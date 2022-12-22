@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import HeaderDropdown from "@/components/HeaderDropdown.vue";
+import { useCartStore } from "@/stores/CartStore";
+const cartStore = useCartStore();
 </script>
 
 <style scoped>
@@ -114,9 +116,9 @@ form {
       </router-link>
     </section>
     <router-link to="/" class="primary-buttons"> Home </router-link>
-    <router-link to="/category/Best%20Selling" class="primary-buttons">
-      New Arrivals
-    </router-link>
+    <!--    <router-link to="/category/Best%20Selling" class="primary-buttons">-->
+    <!--      New Arrivals-->
+    <!--    </router-link>-->
     <router-link to="/category/Best%20Selling" class="primary-buttons">
       Best Sellers
     </router-link>
@@ -133,7 +135,7 @@ form {
     <header-dropdown></header-dropdown>
     <div class="add-to-cart">
       <i class="fas fa-shopping-cart">
-        <span class="add-to-cart-number">11</span></i
+        <span class="add-to-cart-number">{{ cartStore.count }}</span></i
       >
     </div>
     <div>

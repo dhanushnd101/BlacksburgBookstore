@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { inject } from "vue";
 import { CategoryItem } from "@/types";
-const categoryList = inject("categoryList");
+import { useCategoryStore } from "@/stores/CategoryStore";
+const CategoryStore = useCategoryStore();
+
 const categoryImageFileName = function (category: CategoryItem): string {
   let name = category.name.toLowerCase();
   name = name.replace(/ /g, "-");
@@ -80,7 +81,7 @@ li div {
 <template>
   <ul class="category-images container">
     <li
-      v-for="category in categoryList"
+      v-for="category in CategoryStore.categoryList"
       :key="category.categoryId"
       class="category-image-items"
     >

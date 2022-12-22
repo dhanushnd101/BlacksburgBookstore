@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { inject } from "vue";
 import { useRoute } from "vue-router";
 const route = useRoute();
-const categoryList = inject("categoryList");
+import { useCategoryStore } from "@/stores/CategoryStore";
+const categoryStore = useCategoryStore();
 </script>
 
 <style scoped>
@@ -33,7 +33,10 @@ const categoryList = inject("categoryList");
 <template>
   <nav class="category-nav">
     <ul class="category-buttons">
-      <li v-for="category in categoryList" :key="category.categoryId">
+      <li
+        v-for="category in categoryStore.categoryList"
+        :key="category.categoryId"
+      >
         <router-link
           :to="{ name: 'category-view', params: { name: category.name } }"
           class="button"

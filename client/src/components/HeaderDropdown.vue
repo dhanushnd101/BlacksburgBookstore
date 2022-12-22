@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { inject } from "vue";
-const categoryList = inject("categoryList");
+import { useCategoryStore } from "@/stores/CategoryStore";
+const categoryStore = useCategoryStore();
 </script>
 
 <style scoped>
@@ -18,6 +18,10 @@ const categoryList = inject("categoryList");
   color: white;
   display: none;
   border-radius: 5px;
+}
+
+li a {
+  display: block;
 }
 
 .header-dropdown li {
@@ -51,7 +55,10 @@ const categoryList = inject("categoryList");
       Categories
     </button>
     <ul>
-      <li v-for="category in categoryList" :key="category.categoryId">
+      <li
+        v-for="category in categoryStore.categoryList"
+        :key="category.categoryId"
+      >
         <router-link :to="'../category/' + category.name">
           {{ category.name }}
         </router-link>
