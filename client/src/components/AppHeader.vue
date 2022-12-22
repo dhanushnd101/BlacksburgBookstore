@@ -86,6 +86,7 @@ form {
   font-size: 30px;
   color: var(--primary-color);
   border: none;
+  white-space: nowrap;
 }
 
 .add-to-cart:hover {
@@ -103,7 +104,7 @@ form {
   top: -17px;
   display: inline-block;
   text-align: center;
-  min-width: 32px;
+  width: 32px;
   height: 23px;
 }
 </style>

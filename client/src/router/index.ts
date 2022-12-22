@@ -3,7 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import CategoryView from "@/views/CategoryView.vue";
 import CheckoutView from "@/views/CheckOutView.vue";
 import CartView from "@/views/CartView.vue";
-
+import ConfirmationView from "@/views/ConfirmationView.vue";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
@@ -25,6 +25,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/checkout",
     name: "check-out-view",
     component: CheckoutView,
+  },
+  {
+    path: "/confirmation",
+    name: "confirmation-view",
+    component: ConfirmationView,
   },
 ];
 

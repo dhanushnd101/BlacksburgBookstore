@@ -59,7 +59,7 @@ footer {
         id="fname"
         name="fname"
         placeholder="john@example.com"
-        style="border-color: #2c49ef; border-radius: 5px; width: 330px"
+        style="border: 2px solid #2c49ef; width: 330px"
       />
       <p class="social-media-icons-style">
         <i class="fab fa-facebook"> </i>

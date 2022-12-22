@@ -1,5 +1,5 @@
 <template>
-  <div class="checkout-view">Hear your check out page</div>
+  <h1>Checkout Page</h1>
   <check-out-table></check-out-table>
 </template>
 
@@ -11,4 +11,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+h1 {
+  margin: 1em auto;
+  text-align: center;
+}
+</style>

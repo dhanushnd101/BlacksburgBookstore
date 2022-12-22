@@ -2,6 +2,9 @@
 import { useCartStore } from "@/stores/CartStore";
 const cartStore = useCartStore();
 import { BookItem } from "@/types";
+import { asDollarsAndCents } from "@/utils";
+import { useCategoryStore } from "@/stores/CategoryStore";
+const categoryStore = useCategoryStore();
 
 const bookImageFileName = function (book: BookItem): string {
   let name = book.title.toLowerCase();
@@ -238,7 +241,13 @@ h2 {
   <div v-if="cartStore.count == 0" class="empty-cart">
     <div>
       <h2>Your shopping cart is empty</h2>
-      <router-link to="/category/Best%20Selling" class="button">
+      <router-link
+        :to="{
+          name: 'category-view',
+          params: { name: categoryStore.categoryName },
+        }"
+        class="button"
+      >
         Continue shopping
       </router-link>
     </div>
@@ -274,7 +283,7 @@ h2 {
             </div>
             <div class="cart-book-title">{{ item.book.title }}</div>
             <div class="cart-book-price">
-              ${{ (item.book.price / 100).toFixed(2) }}
+              {{ asDollarsAndCents(item.book.price) }}
             </div>
             <div class="cart-book-quantity">
               &nbsp;
@@ -297,7 +306,7 @@ h2 {
               </button>
             </div>
             <div class="cart-book-subtotal">
-              ${{ ((item.book.price / 100) * item.quantity).toFixed(2) }}
+              {{ asDollarsAndCents(item.book.price * item.quantity) }}
             </div>
           </li>
           <li class="line-sep"></li>
@@ -305,7 +314,7 @@ h2 {
         <li class="table-heading">
           <div class="heading-book">Total Amount</div>
           <div class="heading-subtotal">
-            ${{ (cartStore.totalAmountWithoutSurcharge / 100).toFixed(2) }}
+            {{ asDollarsAndCents(cartStore.totalAmountWithoutSurcharge) }}
           </div>
         </li>
       </ul>
@@ -321,7 +330,10 @@ h2 {
         </div>
         <div>
           <router-link
-            to="/category/Best%20Selling"
+            :to="{
+              name: 'category-view',
+              params: { name: categoryStore.categoryName },
+            }"
             class="button continue-shopping-button"
           >
             Continue shopping
@@ -341,7 +353,7 @@ h2 {
                 ({{ cartStore.count }} Item)
               </th>
               <th class="tg-wp8o">
-                ${{ (cartStore.totalAmountWithoutSurcharge / 100).toFixed(2) }}
+                {{ asDollarsAndCents(cartStore.totalAmountWithoutSurcharge) }}
               </th>
             </tr>
           </thead>
@@ -357,7 +369,7 @@ h2 {
                 <span style="font-weight: bold">Total</span>
               </td>
               <td class="tg-wp8o">
-                ${{ (cartStore.totalAmount / 100).toFixed(2) }}
+                {{ asDollarsAndCents(cartStore.totalAmount) }}
               </td>
             </tr>
           </tbody>
