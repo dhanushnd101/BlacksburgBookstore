@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import CategoryView from "@/views/CategoryView.vue";
+import CheckoutView from "@/views/CheckOutView.vue";
+import CartView from "@/views/CartView.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -13,6 +15,16 @@ const routes: Array<RouteRecordRaw> = [
     name: "category-view",
     component: CategoryView,
     props: true,
+  },
+  {
+    path: "/cart",
+    name: "cart-view",
+    component: CartView,
+  },
+  {
+    path: "/checkout",
+    name: "check-out-view",
+    component: CheckoutView,
   },
 ];
 

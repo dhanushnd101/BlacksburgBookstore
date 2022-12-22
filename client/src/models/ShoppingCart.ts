@@ -100,7 +100,7 @@ export class ShoppingCart {
     }
   }
 
-  toJSON(): readonly ShoppingCartItem[] {
+  get items(): readonly ShoppingCartItem[] {
     return this.itemArray;
   }
 }

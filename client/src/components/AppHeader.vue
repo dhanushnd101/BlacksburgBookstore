@@ -93,14 +93,18 @@ form {
   cursor: pointer;
 }
 .add-to-cart-number {
-  font-size: 17px;
+  font-size: 14px;
   background: red;
   color: white;
   border-radius: 50%;
-  padding: 7px;
+  padding: 4px;
   position: relative;
-  left: -15px;
-  top: -15px;
+  left: -17px;
+  top: -17px;
+  display: inline-block;
+  text-align: center;
+  min-width: 32px;
+  height: 23px;
 }
 </style>
 
@@ -134,9 +138,11 @@ form {
     </form>
     <header-dropdown></header-dropdown>
     <div class="add-to-cart">
-      <i class="fas fa-shopping-cart">
-        <span class="add-to-cart-number">{{ cartStore.count }}</span></i
-      >
+      <router-link to="/cart">
+        <i class="fas fa-shopping-cart">
+          <span class="add-to-cart-number">{{ cartStore.count }}</span></i
+        >
+      </router-link>
     </div>
     <div>
       <button class="button button-sign-in">
