@@ -24,7 +24,7 @@ import HomeCategoryList from "@/components/HomeCategoryList.vue";
   background: #2295f4;
   box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  width: 187px;
+  width: 190px;
   height: 60px;
   font-family: "Roboto";
   font-style: normal;
@@ -32,12 +32,18 @@ import HomeCategoryList from "@/components/HomeCategoryList.vue";
   font-size: 26px;
   color: #ffffff;
   border: none;
+  transition-duration: 500ms;
+  transform: scale(1);
 }
 .shop-me-button:hover {
+  text-align: center;
+
   background: #0f4069;
   cursor: pointer;
+  transform: scale(1.5);
 }
 </style>
+
 <template>
   <div class="home-page">
     <section class="flow-content container">
@@ -77,7 +83,6 @@ import HomeCategoryList from "@/components/HomeCategoryList.vue";
         </section>
       </section>
     </section>
-    <!--    </section>-->
     <section class="category-images container">
       <home-category-list></home-category-list>
     </section>

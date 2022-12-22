@@ -16,10 +16,6 @@ header > * {
   align-items: center;
 }
 
-.search-bar button:hover {
-  background: #ccc;
-}
-
 @media (max-width: 600px) {
   header {
     flex-direction: column;
@@ -48,19 +44,20 @@ form {
   height: fit-content;
 }
 
-input[type="search"] {
-  border: none;
+.search-bar {
   background: transparent;
   margin: 0;
   padding-left: 10px;
   font-size: 17px;
   color: inherit;
-  border: 1px;
-  border: 1px solid transparent;
-  border-radius: inherit;
+  border: none;
 }
 
-button[type="submit"] {
+.search-bar:focus {
+  outline: none;
+}
+
+.search-button {
   overflow: hidden;
   width: 30px;
   padding: 0;
@@ -72,12 +69,7 @@ button[type="submit"] {
   background-color: transparent;
 }
 
-button[type="submit"]:hover {
-  opacity: 1;
-}
-
 .button-sign-in {
-  /*margin-left: 10px;*/
   background: #2dd62a;
   border: 1px solid #2295f4;
 }
@@ -96,13 +88,14 @@ button[type="submit"]:hover {
 
 .add-to-cart:hover {
   color: var(--primary-color-dark);
+  cursor: pointer;
 }
 .add-to-cart-number {
   font-size: 17px;
   background: red;
   color: white;
-  border-radius: 55px;
-  padding: 3px;
+  border-radius: 50%;
+  padding: 7px;
   position: relative;
   left: -15px;
   top: -15px;
@@ -116,7 +109,7 @@ button[type="submit"]:hover {
         <img
           src="@/assets/images/site/BlacksburgBooks.png"
           alt="Another Bookstore Logo"
-          width="150"
+          width="160"
         />
       </router-link>
     </section>
@@ -128,25 +121,24 @@ button[type="submit"]:hover {
       Best Sellers
     </router-link>
     <form action="CategoryBookList.vue">
-      <router-link to="/category/Best%20Selling">
-        <div>
-          <input type="search" placeholder="search books" name="search" />
-          <button type="submit" value="Search">
-            <fa :icon="['fas', 'search']" />
+      <div class="search">
+        <input class="search-bar" type="search" placeholder="search books" />
+        <router-link to="/category/Best%20Selling">
+          <button class="search-button" type="submit" value="Search">
+            <i class="fas fa-search"></i>
           </button>
-        </div>
-      </router-link>
+        </router-link>
+      </div>
     </form>
     <header-dropdown></header-dropdown>
     <div class="add-to-cart">
-      <p>
-        <fa :icon="['fas', 'shopping-cart']" />
-        <span class="add-to-cart-number">11</span>
-      </p>
+      <i class="fas fa-shopping-cart">
+        <span class="add-to-cart-number">11</span></i
+      >
     </div>
     <div>
       <button class="button button-sign-in">
-        <fa :icon="['fas', 'fa-user']" /> DND
+        <i class="fa-solid fa-user"></i> DND
       </button>
     </div>
   </header>

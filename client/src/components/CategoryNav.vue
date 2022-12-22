@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { inject } from "vue";
+import { useRoute } from "vue-router";
+const route = useRoute();
 const categoryList = inject("categoryList");
 </script>
 
@@ -12,7 +14,7 @@ const categoryList = inject("categoryList");
 }
 
 .button.selected-category-button {
-  background-color: var(--primary-color);
+  background-color: darkblue;
   border-radius: 0;
 }
 
@@ -33,12 +35,13 @@ const categoryList = inject("categoryList");
     <ul class="category-buttons">
       <li v-for="category in categoryList" :key="category.categoryId">
         <router-link
-          :to="'../category/' + category.name"
+          :to="{ name: 'category-view', params: { name: category.name } }"
           class="button"
-          :class="{
-            'selected-category-button': category.name === 'Best Selling',
-            'unselected-category-button': category.name !== 'Best Selling',
-          }"
+          :class="
+            category.name === route.params.name
+              ? 'selected-category-button'
+              : 'unselected-category-button'
+          "
         >
           {{ category.name }}
         </router-link>

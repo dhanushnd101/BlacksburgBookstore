@@ -22,12 +22,27 @@ const bookImageFileName = function (book: BookItem): string {
 .book-box {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 160px;
   background-color: var(--card-background-color);
   padding: 1em;
   gap: 0.25em;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
+}
+
+.book-box-featured {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 160px;
+  background-color: var(--card-background-color);
+  padding: 1em;
+  gap: 0.25em;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  background-image: url("@/assets/images/books/featured.jpg");
+  background-repeat: no-repeat;
 }
 
 .book-title {
@@ -49,7 +64,6 @@ const bookImageFileName = function (book: BookItem): string {
 }
 
 .book-price {
-  /* margin-top: -5px; */
   color: #1ead1b;
 }
 
@@ -62,9 +76,10 @@ const bookImageFileName = function (book: BookItem): string {
   color: #ffffff;
   border: none;
   width: 110px;
-  /*margin-left: 25px;*/
-  position: absolute;
-  left: 0;
+  margin-left: 25px;
+  position: static;
+  bottom: 110px;
+  left: 0px;
 }
 
 .add-to-cart:hover {
@@ -73,31 +88,45 @@ const bookImageFileName = function (book: BookItem): string {
 }
 
 .read-now-button {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #ff6c02;
   color: white;
   transform: translateY(-1.6em);
-  margin-bottom: -1.6em;
   text-align: center;
   padding: 0.1em;
+}
+.read-now-button-no {
+  display: none;
 }
 
 .read-now-button:hover {
   cursor: pointer;
+  background-color: white;
+  color: #ff6c02;
 }
 </style>
 
 <template>
-  <li class="book-box">
-    <div class="book-image">
-      <img
-        :src="require('@/assets/images/books/' + bookImageFileName(book))"
-        :alt="book.title"
-      />
-      <div class="read-now-button">Read Now</div>
+  <li :class="book.isFeatured === true ? 'book-box-featured' : 'book-box'">
+    <div>
+      <div class="book-image">
+        <img
+          :src="require('@/assets/images/books/' + bookImageFileName(book))"
+          :alt="book.title"
+        />
+        <div
+          :class="
+            book.isPublic === true ? 'read-now-button' : 'read-now-button-no'
+          "
+        >
+          Read Now
+        </div>
+      </div>
+      <div class="book-title">{{ book.title }}</div>
+      <div class="book-author">{{ book.author }}</div>
     </div>
-    <div class="book-title">{{ book.title }}</div>
-    <div class="book-author">{{ book.author }}</div>
-    <div class="book-price">${{ (book.price / 100).toFixed(2) }}</div>
-    <button class="add-to-cart">Add to Cart</button>
+    <div>
+      <div class="book-price">${{ (book.price / 100).toFixed(2) }}</div>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
   </li>
 </template>

@@ -40,13 +40,14 @@ const categoryList = inject("categoryList");
   min-width: 7.5em;
   z-index: 1;
   cursor: pointer;
+  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.25);
 }
 </style>
 
 <template>
   <div class="header-dropdown">
     <button class="button categories-button">
-      <fa :icon="['fas', 'chevron-down']" />
+      <i class="fas fa-chevron-down"></i>
       Categories
     </button>
     <ul>

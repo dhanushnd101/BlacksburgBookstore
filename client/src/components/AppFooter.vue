@@ -62,21 +62,20 @@ footer {
         style="border-color: #2c49ef; border-radius: 5px; width: 330px"
       />
       <p class="social-media-icons-style">
-        <fa :icon="['fab', 'facebook']" />
-        <fa :icon="['fab', 'youtube']" />
-        <fa :icon="['fab', 'instagram']" />
-        <fa :icon="['fab', 'linkedin']" />
-        <fa :icon="['fab', 'twitch']" />
-        <fa :icon="['fab', 'snapchat-ghost']" />
-        <fa :icon="['fab', 'discord']" />
-        <fa :icon="['fab', 'github']" />
-        <fa :icon="['fab', 'facebook']" />
+        <i class="fab fa-facebook"> </i>
+        <i class="fab fa-youtube"> </i>
+        <i class="fab fa-instagram"> </i>
+        <i class="fab fa-linkedin"> </i>
+        <i class="fab fa-twitch"> </i>
+        <i class="fab fa-snapchat-ghost"> </i>
+        <i class="fab fa-discord"> </i>
+        <i class="fab fa-github"> </i>
       </p>
     </section>
   </footer>
   <footer class="footer-footer">
-    <p><fa :icon="['fas', 'heart']" /> from team DND</p>
-    <p><fa :icon="['fas', 'copyright']" /> 2022 All rights reserved</p>
+    <p><i class="fas fa-heart"></i> from team DND</p>
+    <p><i class="far fa-copyright"></i> 2022 All rights reserved</p>
     <p>Privacy Policy | Terms & conditios</p>
   </footer>
 </template>

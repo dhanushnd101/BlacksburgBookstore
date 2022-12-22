@@ -5,6 +5,7 @@ export interface BookItem {
   author: string;
   price: number;
   isPublic: boolean;
+  isFeatured: boolean;
 }
 
 export interface CategoryItem {
